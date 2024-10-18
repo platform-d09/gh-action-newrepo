@@ -14,6 +14,6 @@ jobs:
         uses: platform-d09/gh-action-newrepo@v1.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          repositoryName: ${{ fromJson(inputs.hook_payload).name }}
-          cookiecutterTemplate: ${{ fromJson(inputs.hook_payload).template_url }}
-          organizationName: ${{ fromJson(inputs.hook_payload).gh_org }}
+          repo_name: ${{ fromJson(inputs.hook_payload).name }}
+          cookiecutter_template: ${{ fromJson(inputs.hook_payload).template_url }}
+          org_name: ${{ fromJson(inputs.hook_payload).gh_org }}
