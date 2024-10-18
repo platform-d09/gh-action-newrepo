@@ -9,6 +9,7 @@ RUN apk update && \
     && pip3 install cookiecutter && pip3 install six
 
 COPY entrypoint.sh /
+
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
