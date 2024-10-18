@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Scaffold
-        uses: platform-d09/gh-action-newrepo@v1.5
+        uses: platform-d09/gh-action-newrepo@v1.6
         with:
           token: ${{ secrets.ORG_TOKEN }}
           repo_name: ${{ fromJson(inputs.hook_payload).name }}
