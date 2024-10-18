@@ -17,4 +17,4 @@ jobs:
           repo_name: ${{ fromJson(inputs.hook_payload).name }}
           cookiecutter_template: ${{ fromJson(inputs.hook_payload).template_url }}
           org_name: ${{ fromJson(inputs.hook_payload).gh_org }}
-          user_inputs: ${{ toJson(fromJson(inputs.port_payload).user_inputs) }}
+          user_inputs: ${{ toJson(fromJson(inputs.hook_payload).user_inputs) }}
