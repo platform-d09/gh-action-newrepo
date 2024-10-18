@@ -5,9 +5,6 @@ on:
         description: "The payload received from the hook"
         required: true
         type: string
-permissions:
-  contents: write
-  
 jobs:
   scaffold:
     runs-on: ubuntu-latest
@@ -15,7 +12,7 @@ jobs:
       - name: Scaffold
         uses: platform-d09/gh-action-newrepo@v1.5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ORG_TOKEN }}
           repo_name: ${{ fromJson(inputs.hook_payload).name }}
           cookiecutter_template: ${{ fromJson(inputs.hook_payload).template_url }}
           org_name: ${{ fromJson(inputs.hook_payload).gh_org }}
