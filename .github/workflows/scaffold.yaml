@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Scaffold
-        uses: platform-d09/gh-action-newrepo@v1.2
+        uses: platform-d09/gh-action-newrepo@v1.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repositoryName: ${{ fromJson(inputs.hook_payload).name }}
