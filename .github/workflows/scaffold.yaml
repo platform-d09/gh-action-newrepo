@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    inputs:
+      hook_payload:
+        description: "The payload received from the hook"
+        required: true
+        type: string
+
+jobs:
+  scaffold:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scaffold
+        uses: platform-d09/gh-action-newrepo@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repositoryName: ${{ fromJson(inputs.hook_payload).name }}
+          cookiecutterTemplate: ${{ fromJson(inputs.hook_payload).template_url }}
+          organizationName: ${{ fromJson(inputs.hook_payload).gh_org }}

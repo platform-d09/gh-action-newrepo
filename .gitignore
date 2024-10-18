@@ -1,0 +1,12 @@
+.vs/
+.vscode/
+bin/
+obj/
+*.user
+.idea/
+node_modules/
+__pycache__/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

@@ -1,0 +1,36 @@
+name: D09 - Create Repo Action
+description: Create a new repository
+inputs:
+  token:
+    description: "The GitHub Token to use to authenticate with the API with permissions to create repositories within the organization (supporting only PATs at this time)"
+    required: true
+  repo_name:
+    description: "The name of the repository to create"
+    required: true
+  org_name:
+    description: "The name of the organization to create the repository within"
+    required: true
+  visibility:
+    description: "The visibility of the repository (public or private)"
+    required: true
+    default: "public"
+  cookiecutter_template:
+    description: "The name of the cookiecutter template to use to create the repository"
+    required: true
+  github_url:
+    description: "The URL of the GitHub instance to use"
+    required: true
+    default: "https://api.github.com"
+  monorepoUrl:
+    description: 'The URL of the monorepo to create the new service in, specify it alongside scaffoldDirectory to open a new pull-request in the monorepo'
+    required: false
+  scaffoldDirectory:
+    description: 'The directory to scaffold the cookiecutter template in'
+    required: false
+  templateDirectory:
+    description: 'The directory to scaffold the cookiecutter template from'
+    required: false
+
+runs:
+  using: docker
+  image: Dockerfile
