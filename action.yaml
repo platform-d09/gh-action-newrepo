@@ -14,6 +14,9 @@ inputs:
     description: "The visibility of the repository (public or private)"
     required: true
     default: "public"
+  user_inputs:
+    description: "The user inputs to pass to the cookiecutter template"
+    required: true
   cookiecutter_template:
     description: "The name of the cookiecutter template to use to create the repository"
     required: true
