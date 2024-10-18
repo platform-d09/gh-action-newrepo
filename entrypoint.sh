@@ -12,6 +12,7 @@ scaffold_directory="$INPUT_SCAFFOLDDIRECTORY"
 branch_name="scaffold_$repository_name"
 git_url="$INPUT_GITHUB_URL"
 user_inputs="$INPUT_USER_INPUTS"
+visibility="$INPUT_VISIBILITY"
 
 
 # get_access_token() {
