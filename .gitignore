@@ -10,3 +10,4 @@ __pycache__/
 *.user
 *.userosscache
 *.sln.docstates
+test.json
