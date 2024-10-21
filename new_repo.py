@@ -97,9 +97,9 @@ def main(environment: ActionEnvironment):
                            url=f'https://oauth2:{builder.environment.github_token}@github.com/{builder.environment.org_name}/{builder.environment.repository_name}.git')
     git_repo.config_writer().set_value('user', 'name', 'GitHub Actions Bot').release()
     git_repo.config_writer().set_value('user', 'email', 'github-actions[bot]@users.noreply.github.com').release()
-    git_repo.git.add(all=True)
-    git_repo.git.commit(message='Initial commit after scaffolding')
-    git_repo.git.branch('-M', 'main')
+    # git_repo.git.add(all=True)
+    # git_repo.git.commit(message='Initial commit after scaffolding')
+    # git_repo.git.branch('-M', 'main')
     git_repo.git.push('-u', 'origin', 'main')
     print("Changes pushed to repository")
     # if os.path.exists('dist/.git') and os.path.isdir('dist/.git'):
