@@ -91,7 +91,7 @@ def main(environment: ActionEnvironment):
     print(f"Repository created at {repo.html_url}")
     generated_repo_path = builder.apply_cookiecutter_template()
     print(f"Cookiecutter template applied to {generated_repo_path}")
-    git_repo = Repo('dist/')
+    git_repo = Repo(generated_repo_path + '/.git')
 
     git_repo.create_remote('origin',
                            url=f'https://oauth2:{builder.environment.github_token}@github.com/{builder.environment.org_name}/{builder.environment.repository_name}.git')
