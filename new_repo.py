@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import json
+import os
 from os import environ
 
 from cookiecutter.main import cookiecutter
@@ -69,7 +70,7 @@ class RepoBuilder:
     def apply_cookiecutter_template(self):
         user_inputs = self.environment.user_inputs.replace('cookiecutter_', '')
         user_inputs = json.loads(user_inputs)
-        cookiecutter(
+        return cookiecutter(
             template=self.environment.cookie_cutter_template,
             no_input=True,
             extra_context={**user_inputs,
@@ -82,12 +83,16 @@ class RepoBuilder:
 
 
 def main(environment: ActionEnvironment):
+    os.system('git config --global user.email "github-actions[bot]@users.noreply.github.com"')
+    os.system('git config --global user.name "GitHub Actions Bot"')
+    os.system(f'git config --global init.defaultBranch main')
     builder = RepoBuilder(environment)
     repo = builder.create_repo()
     print(f"Repository created at {repo.html_url}")
-    builder.apply_cookiecutter_template()
-    print("Cookiecutter template applied")
+    generated_repo_path = builder.apply_cookiecutter_template()
+    print(f"Cookiecutter template applied to {generated_repo_path}")
     git_repo = Repo('dist/')
+
     git_repo.create_remote('origin',
                            url=f'https://oauth2:{builder.environment.github_token}@github.com/{builder.environment.org_name}/{builder.environment.repository_name}.git')
     git_repo.config_writer().set_value('user', 'name', 'GitHub Actions Bot').release()

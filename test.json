@@ -1,5 +1,5 @@
 {
-    "name": "some_repo_private_go",
+    "name": "some_repo_private_go22",
     "template_url": "https://github.com/lacion/cookiecutter-golang",
     "gh_org": "platform-d09",
     "user_inputs": {},
