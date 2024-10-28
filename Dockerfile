@@ -9,10 +9,10 @@ RUN apk update && \
     && pip3 install cookiecutter && pip3 install six
 
 COPY *.sh /
-COPY requirements.txt /
-RUN pip3 install -r requirements.txt
-COPY *.py /
+# COPY requirements.txt /
+# RUN pip3 install -r requirements.txt
+# COPY *.py /
 RUN chmod +x /*.sh
-RUN chmod +x /*.py
+# RUN chmod +x /*.py
 
-ENTRYPOINT ["/new_repo.py"]
+ENTRYPOINT ["/entrypoint.sh"]
