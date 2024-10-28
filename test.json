@@ -1,7 +1,10 @@
 {
-    "name": "some_repo_private_go44",
-    "template_url": "https://github.com/lacion/cookiecutter-golang",
+    "name": "net_service-weather-api",
+    "template_url": "https://github.com/platform-d09/dotnet-webapi-cookiecutter",
     "gh_org": "platform-d09",
-    "user_inputs": {},
+    "user_inputs": {
+        "dotnet_solutionName": "D09.SampleProject.WeatherApi",
+        "project_name": "net_service-weather-api"
+    },
     "visibility": "private"
 }

@@ -92,9 +92,10 @@ def main(environment: ActionEnvironment):
     generated_repo_path = builder.apply_cookiecutter_template()
     print(f"Cookiecutter template applied to {generated_repo_path}")
     git_repo = Repo(generated_repo_path + '/.git')
-
+    print("Repository initialized")
     git_repo.create_remote('origin',
                            url=f'https://oauth2:{builder.environment.github_token}@github.com/{builder.environment.org_name}/{builder.environment.repository_name}.git')
+    print("Remote origin created")
     git_repo.config_writer().set_value('user', 'name', 'GitHub Actions Bot').release()
     git_repo.config_writer().set_value('user', 'email', 'github-actions[bot]@users.noreply.github.com').release()
     # git_repo.git.add(all=True)
