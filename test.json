@@ -3,7 +3,7 @@
     "template_url": "https://github.com/platform-d09/dotnet-webapi-cookiecutter",
     "gh_org": "platform-d09",
     "user_inputs": {
-        "dotnet_solutionName": "D09.SampleProject.WeatherApi"
+        "cookiecutter_dotnet_solutionName": "D09.SampleProject.WeatherApi"
     },
     "visibility": "private"
 }

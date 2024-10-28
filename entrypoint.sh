@@ -164,7 +164,9 @@ push_to_repository() {
 
 main() {
   #access_token=$(get_access_token)
-
+  git config --global user.name "GitHub Actions Bot"
+  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+  git config --global init.defaultBranch main
   if [ -z "$monorepo_url" ] || [ -z "$scaffold_directory" ]; then
     echo "Creating a new repository: $repository_name 🏃"
     create_repository
